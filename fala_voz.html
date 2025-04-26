@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/css/fala_voz.css">
+  <title>HearU</title>
+</head>
+<body>
+  <h1>HearU</h1>
+
+<section class="carousel-container">
+   
+  <div class="category-title">🛏️ Conforto físico</div>
+  <div class="carousel">
+      <button class="button blue" onclick="speak('Quero que ajuste meu travesseiro.')">
+        <img src="./src/img/ajustar_cama.png" alt="Travesseiro">
+        Quero que ajuste meu travesseiro.
+      </button>
+      <button class="button blue" onclick="speak('Gostaria de ficar de lado.')">
+        <img src="./src/img/trocar_de_posicao.png" alt="Lado">
+        Gostaria de ficar de lado.
+      </button>
+      <button class="button blue" onclick="speak('Quero ficar sentado um pouco.')">
+        <img src="./src/img/sentar.png" alt="Sentado">
+        Quero ficar sentado um pouco.
+      </button>
+      <button class="button blue" onclick="speak('Preciso que ajeite meu cobertor.')">
+        <img src="https://cdn-icons-png.flaticon.com/128/235/235861.png" alt="Cobertor">
+        Preciso que ajeite meu cobertor.
+      </button>
+      <button class="button blue" onclick="speak('Estou com calor.')">
+        <img src="https://cdn-icons-png.flaticon.com/128/1684/1684375.png" alt="Calor">
+        Estou com calor.
+      </button>
+      <button class="button blue" onclick="speak('Estou com frio.')">
+        <img src="https://cdn-icons-png.flaticon.com/128/1684/1684377.png" alt="Frio">
+        Estou com frio.
+      </button>
+ </div>
+
+  <div class="category-title">💧 Fome, sede e necessidades básicas</div>
+  <div class="carousel">
+      <button class="button green" onclick="speak('Quero beber água.')">
+        <img src="./src/img/beber.png" alt="Água">
+        Quero beber água.
+      </button>
+      <button class="button green" onclick="speak('Estou com fome.')">
+        <img src="./src/img/fome.png" alt="Fome">
+        Estou com fome.
+      </button>
+      <button class="button green" onclick="speak('Quero ir ao banheiro.')">
+        <img src="https://cdn-icons-png.flaticon.com/128/2933/2933755.png" alt="Banheiro">
+        Quero ir ao banheiro.
+      </button>
+      <button class="button green" onclick="speak('Preciso trocar a fralda.')">
+        <img src="https://cdn-icons-png.flaticon.com/128/628/628283.png" alt="Fralda">
+        Preciso trocar a fralda.
+      </button>
+      <button class="button green" onclick="speak('A comida estava boa.')">
+        <img src="https://cdn-icons-png.flaticon.com/128/2718/2718224.png" alt="Comida boa">
+        A comida estava boa.
+      </button>
+      <button class="button green" onclick="speak('Gostaria de escovar os dentes.')">
+        <img src="https://cdn-icons-png.flaticon.com/128/3394/3394552.png" alt="Escovar os dentes">
+        Gostaria de escovar os dentes.
+      </button>
+  </div>
+
+  <div class="category-title">📺 Lazer e distração</div>
+  <div class="carousel">
+      <button class="button yellow" onclick="speak('Quero ver televisão.')">
+        <img src="./src/img/assistir_um_fiome.png" alt="televisao">
+        Quero ver televisão.</button>
+      <button class="button yellow" onclick="speak('Gostaria de ouvir música.')">
+        <img src="https://cdn-icons-png.flaticon.com/128/2933/2933755.png" alt="musica">
+        Gostaria de ouvir música.</button>
+      <button class="button yellow" onclick="speak('Quero ficar em silêncio.')">
+        <img src="./src/img/quero_um_pouco_de_silencio.png" alt="silencio">
+        Quero ficar em silêncio.</button>
+      <button class="button yellow" onclick="speak('Quero conversar.')">
+        <img src="./src/img/conversar.png" alt="conversar">
+        Quero ouvir você ler algo pra mim.</button>
+      <button class="button yellow" onclick="speak('Gostaria de ver fotos da minha família.')">Gostaria de ver fotos da minha família.</button>
+  </div>
+
+  <div class="category-title">🤝 Contato humano e afeto</div>
+  <div class="carousel">
+      <button class="button red" onclick="speak('Quero segurar sua mão.')">Quero segurar sua mão.</button>
+      <button class="button red" onclick="speak('Preciso de um abraço.')">Preciso de um abraço.</button>
+      <button class="button red" onclick="speak('Fique aqui comigo.')">Fique aqui comigo.</button>
+      <button class="button red" onclick="speak('Quero sentir sua presença.')">Quero sentir sua presença.</button>
+      <button class="button red" onclick="speak('Pode conversar comigo, mesmo que eu não responda.')">Pode conversar comigo, mesmo que eu não responda.</button>
+  </div>
+
+  <div class="category-title">👁️ Comunicação e atenção</div>
+  <div class="carousel">
+      <button class="button gray" onclick="speak('Estou tentando dizer algo.')">Estou tentando dizer algo.</button>
+      <button class="button gray" onclick="speak('Olhe nos meus olhos, por favor.')">Olhe nos meus olhos, por favor.</button>
+      <button class="button gray" onclick="speak('Preciso que me escutem com calma.')">Preciso que me escutem com calma.</button>
+      <button class="button gray" onclick="speak('Quero participar das decisões sobre mim.')">Quero participar das decisões sobre mim.</button>
+  </div>
+
+  <div class="category-title">⛪ Espiritualidade e emoções</div>
+  <div class="carousel">
+      <button class="button purple" onclick="speak('Quero rezar.')">Quero rezar.</button>
+      <button class="button purple" onclick="speak('Preciso de paz agora.')">Preciso de paz agora.</button>
+      <button class="button purple" onclick="speak('Estou triste, fique um pouco comigo.')">Estou triste, fique um pouco comigo.</button>
+      <button class="button purple" onclick="speak('Sinto medo, preciso de conforto.')">Sinto medo, preciso de conforto.</button>
+      <button class="button purple" onclick="speak('Quero conversar com alguém da minha fé.')">Quero conversar com alguém da minha fé.</button>
+  </div>
+</section>
+
+  
+  
+<BR></BR>
+<h1>PERSONALIZAR FRASE</h1>
+  <div class="input-section">
+    <input type="text" id="fraseInput" placeholder="Digite sua frase personalizada...">
+    <button class="salvar" onclick="salvarFrase()">Salvar</button>
+  </div>
+
+  <div class="saved-cards" id="cardsContainer"></div>
+
+ <script src="./src/js/fala_voz.js"></script>
+</body>
+</html>

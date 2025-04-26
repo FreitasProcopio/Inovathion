@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HearU - Planejamento do Dia</title>
+  <link rel="stylesheet" href="./src/css/quadro_planejamento.css">
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+</head>
+<body>
+  <h1>Planejamento do Dia - HearU</h1>
+  <div class="container">
+    <div class="column">
+      <h2>Quadro do Dia</h2>
+      <div class="sub-column" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h3>Manhã</h3>
+      </div>
+      <div class="sub-column" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h3>Tarde</h3>
+      </div>
+      <div class="sub-column" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h3>Noite</h3>
+      </div>
+    </div>
+
+    <div class="column">
+      <h2>Atividades Disponíveis</h2>
+      <div class="card" draggable="true" ondragstart="drag(event)" id="card1">
+        <img src="https://img.icons8.com/color/96/meal.png" alt="Comer"  draggable="true" ondragstart="drag(event)" id="card1">
+        <p>Comer</p>
+      </div>
+      <div class="card" draggable="true" ondragstart="drag(event)" id="card2">
+        <img src="https://img.icons8.com/color/96/bath.png" alt="Banho" draggable="true" ondragstart="drag(event)" id="card2">
+        <p>Banho</p>
+      </div>
+      <div class="card" draggable="true" ondragstart="drag(event)" id="card3">
+        <img src="https://img.icons8.com/color/96/reading.png" alt="Estudar" draggable="true" ondragstart="drag(event)" id="card3">
+        <p>Estudar</p>
+      </div>
+      <div class="card" draggable="true" ondragstart="drag(event)" id="card4">
+        <img src="https://img.icons8.com/color/96/football2.png" alt="Brincar" draggable="true" ondragstart="drag(event)" id="card4">
+        <p>Brincar</p>
+      </div>
+      <div class="card" draggable="true" ondragstart="drag(event)" id="card5">
+        <img src="https://img.icons8.com/color/96/sleeping-in-bed.png" alt="Dormir" draggable="true" ondragstart="drag(event)" id="card5">
+        <p>Dormir</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  const data = ev.dataTransfer.getData("text");
+  const card = document.getElementById(data);
+
+  let dropZone = ev.target;
+  while (dropZone && !dropZone.classList.contains('sub-column')) {
+    dropZone = dropZone.parentElement;
+  }
+
+  if (!dropZone) return;
+
+  addCardToColumn(card, dropZone);
+}
+
+function addCardToColumn(card, targetColumn) {
+  const clone = card.cloneNode(true);
+  clone.id = "";
+  clone.setAttribute("draggable", false);
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "×";
+  deleteBtn.className = "delete-btn";
+  deleteBtn.onclick = () => clone.remove();
+
+  clone.appendChild(deleteBtn);
+  targetColumn.appendChild(clone);
+}
+
+// SUPORTE A TOQUE (TOUCH) 👇
+let touchCard = null;
+
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('touchstart', e => {
+    touchCard = card;
+  });
+});
+
+document.querySelectorAll('.sub-column').forEach(column => {
+  column.addEventListener('touchend', e => {
+    if (touchCard) {
+      addCardToColumn(touchCard, column);
+      touchCard = null;
+    }
+  });
+});
+
+
+
+  </script>
+</body>
+</html>
